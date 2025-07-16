@@ -306,8 +306,10 @@ curl -X POST http://localhost:3000/execute \
 
 ### Install from crates.io
 
+*Coming soon - crates.io publication pending*
+
 ```bash
-cargo add pocketflow-rs
+cargo add pocketflow-rs  # Available soon
 ```
 
 ### Development Installation
