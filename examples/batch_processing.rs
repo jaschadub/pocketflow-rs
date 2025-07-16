@@ -1,8 +1,8 @@
 use async_trait::async_trait;
-use pocketflow_rs::batch::Batch;
-use pocketflow_rs::flow::Flow;
-use pocketflow_rs::node::Node;
-use pocketflow_rs::error::FlowError;
+use rustyflow::batch::Batch;
+use rustyflow::flow::Flow;
+use rustyflow::node::Node;
+use rustyflow::error::FlowError;
 use serde_json::{json, Value};
 
 // A simple node that appends a suffix to a string

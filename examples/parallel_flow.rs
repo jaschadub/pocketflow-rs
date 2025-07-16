@@ -1,7 +1,7 @@
 use async_trait::async_trait;
-use pocketflow_rs::flow::ParallelFlow;
-use pocketflow_rs::node::Node;
-use pocketflow_rs::error::FlowError;
+use rustyflow::flow::ParallelFlow;
+use rustyflow::node::Node;
+use rustyflow::error::FlowError;
 use serde_json::{json, Value};
 use std::time::Duration;
 use tokio::time::sleep;

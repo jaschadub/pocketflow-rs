@@ -1,16 +1,16 @@
 <div align="center">
-  <img src="logo.png" alt="PocketFlow-RS Logo" width="200"/>
+  <img src="logo.png" alt="RustyFlow Logo" width="200"/>
 </div>
 
-# PocketFlow-RS
+# RustyFlow
 
 [![Rust](https://img.shields.io/badge/rust-1.70+-orange.svg)](https://www.rust-lang.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/the-pocket/pocketflow-rs)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/the-pocket/rustyflow)
 
 A lightweight, high-performance agent framework for Rust, providing elegant abstractions for building complex AI workflows with type safety and async concurrency.
 
-PocketFlow-RS is a Rust rewrite of the popular Python PocketFlow framework, bringing memory safety, fearless concurrency, and zero-cost abstractions to agent-based computing.
+RustyFlow is a Rust rewrite of the popular Python PocketFlow framework, bringing memory safety, fearless concurrency, and zero-cost abstractions to agent-based computing.
 
 ## 🚀 Features
 
@@ -36,11 +36,11 @@ PocketFlow-RS is a Rust rewrite of the popular Python PocketFlow framework, brin
 
 ## ⚡ Quick Start
 
-Add PocketFlow-RS to your `Cargo.toml`:
+Add RustyFlow to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-pocketflow-rs = "0.1.0"
+rustyflow = "0.1.0"
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
@@ -74,7 +74,7 @@ async fn main() {
 
 ## 🏗️ Architecture
 
-PocketFlow-RS models AI workflows as a **Graph + Async Execution**:
+RustyFlow models AI workflows as a **Graph + Async Execution**:
 
 ```mermaid
 graph TD
@@ -266,7 +266,7 @@ async fn main() {
 
 ## 🌐 HTTP Server
 
-PocketFlow-RS includes a built-in HTTP server for exposing flows as REST APIs:
+RustyFlow includes a built-in HTTP server for exposing flows as REST APIs:
 
 ```rust
 use axum::{Router, routing::post};
@@ -309,14 +309,14 @@ curl -X POST http://localhost:3000/execute \
 *Coming soon - crates.io publication pending*
 
 ```bash
-cargo add pocketflow-rs  # Available soon
+cargo add rustyflow  # Available soon
 ```
 
 ### Development Installation
 
 ```bash
-git clone https://github.com/the-pocket/pocketflow-rs.git
-cd pocketflow-rs
+git clone https://github.com/the-pocket/rustyflow.git
+cd rustyflow
 cargo build --release
 ```
 
@@ -338,9 +338,9 @@ cargo run --bin server
 
 ## ⚡ Performance
 
-PocketFlow-RS leverages Rust's zero-cost abstractions and efficient async runtime:
+RustyFlow leverages Rust's zero-cost abstractions and efficient async runtime:
 
-| Metric | PocketFlow-RS | Python PocketFlow |
+| Metric | RustyFlow | Python PocketFlow |
 |--------|---------------|-------------------|
 | Memory Usage | ~2MB base | ~15MB base |
 | Startup Time | ~10ms | ~100ms |
@@ -368,8 +368,8 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 ### Development Setup
 
 ```bash
-git clone https://github.com/the-pocket/pocketflow-rs.git
-cd pocketflow-rs
+git clone https://github.com/the-pocket/rustyflow.git
+cd rustyflow
 cargo test
 cargo clippy
 cargo fmt
@@ -385,7 +385,7 @@ cargo test -- --nocapture    # Show print statements
 
 ## 🔧 Error Handling
 
-PocketFlow-RS uses structured error handling with detailed error messages:
+RustyFlow uses structured error handling with detailed error messages:
 
 ```rust
 #[derive(Error, Debug)]
@@ -403,7 +403,7 @@ pub enum FlowError {
 
 ## 📖 Documentation
 
-- [API Documentation](https://docs.rs/pocketflow-rs)
+- [API Documentation](https://docs.rs/rustyflow)
 - [Examples](./examples/)
 - [Migration Guide](./docs/migration.md) (from Python PocketFlow)
 

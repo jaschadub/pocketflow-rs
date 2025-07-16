@@ -6,7 +6,7 @@ use axum::{
     routing::post,
     Router,
 };
-use pocketflow_rs::{
+use rustyflow::{
     error::FlowError,
     flow::Flow,
     node::Node,
@@ -71,7 +71,7 @@ async fn main() {
     tracing_subscriber::registry()
         .with(
             tracing_subscriber::EnvFilter::try_from_default_env()
-                .unwrap_or_else(|_| "pocketflow_rs=debug,tower_http=debug".into()),
+                .unwrap_or_else(|_| "rustyflow=debug,tower_http=debug".into()),
         )
         .with(tracing_subscriber::fmt::layer())
         .init();

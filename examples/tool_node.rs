@@ -1,8 +1,8 @@
 use async_trait::async_trait;
-use pocketflow_rs::flow::Flow;
-use pocketflow_rs::node::Node;
-use pocketflow_rs::tool::{Tool, ToolNode};
-use pocketflow_rs::error::FlowError;
+use rustyflow::flow::Flow;
+use rustyflow::node::Node;
+use rustyflow::tool::{Tool, ToolNode};
+use rustyflow::error::FlowError;
 use serde::{Deserialize, Serialize};
 use serde_json::json;
 
