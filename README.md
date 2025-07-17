@@ -4,9 +4,11 @@
 
 # RustyFlow
 
+[![Crates.io](https://img.shields.io/crates/v/rustyflow.svg)](https://crates.io/crates/rustyflow)
+[![Documentation](https://docs.rs/rustyflow/badge.svg)](https://docs.rs/rustyflow)
 [![Rust](https://img.shields.io/badge/rust-1.70+-orange.svg)](https://www.rust-lang.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/the-pocket/rustyflow)
+[![Build Status](https://github.com/jaschadub/rustyflow/workflows/CI/badge.svg)](https://github.com/jaschadub/rustyflow/actions)
 
 A lightweight, high-performance agent framework for Rust, providing elegant abstractions for building complex AI workflows with type safety and async concurrency.
 
@@ -306,10 +308,8 @@ curl -X POST http://localhost:3000/execute \
 
 ### Install from crates.io
 
-*Coming soon - crates.io publication pending*
-
 ```bash
-cargo add rustyflow  # Available soon
+cargo add rustyflow
 ```
 
 ### Development Installation
