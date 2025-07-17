@@ -6,7 +6,7 @@
 
 [![Crates.io](https://img.shields.io/crates/v/rustyflow.svg)](https://crates.io/crates/rustyflow)
 [![Documentation](https://docs.rs/rustyflow/badge.svg)](https://docs.rs/rustyflow)
-[![Rust](https://img.shields.io/badge/rust-1.70+-orange.svg)](https://www.rust-lang.org)
+[![Rust](https://img.shields.io/badge/rust-1.80+-orange.svg)](https://www.rust-lang.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://github.com/jaschadub/rustyflow/workflows/CI/badge.svg)](https://github.com/jaschadub/rustyflow/actions)
 
@@ -303,7 +303,7 @@ curl -X POST http://localhost:3000/execute \
 
 ### Prerequisites
 
-- Rust 1.70 or later
+- Rust 1.80 or later
 - Cargo package manager
 
 ### Install from crates.io
