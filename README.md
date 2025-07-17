@@ -429,5 +429,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <div align="center">
-  Made with ❤️ and 🦀 by <a href="https://github.com/the-pocket">The Pocket</a>
+  Made with ❤️ and 🦀 by ThirdKey.ai
 </div>
