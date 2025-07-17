@@ -2,6 +2,15 @@
 name = "rustyflow"
 version = "0.1.0"
 edition = "2021"
+authors = ["Jascha Wanger <jascha@thirdkey.ai>"]
+license = "MIT"
+description = "A lightweight, high-performance agent framework for Rust, providing elegant abstractions for building complex AI workflows with type safety and async concurrency."
+repository = "https://github.com/jaschadub/rustyflow"
+homepage = "https://github.com/jaschadub/rustyflow"
+documentation = "https://docs.rs/rustyflow"
+readme = "README.md"
+keywords = ["ai", "agents", "workflow", "async", "framework"]
+categories = ["development-tools", "asynchronous"]
 
 [dependencies]
 tokio = { version = "1", features = ["full"] }
