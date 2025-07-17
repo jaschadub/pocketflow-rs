@@ -15,7 +15,7 @@ struct WaitAndReturnNode {
 #[async_trait]
 impl Node for WaitAndReturnNode {
     async fn call(&self, input: Value) -> Result<Value, FlowError> {
-        println!("Node {} received input: {}", self.id, input);
+        println!("Node {} received input: {input}", self.id);
         sleep(Duration::from_millis(self.wait_ms)).await;
         let result = json!({
             "id": self.id,
@@ -57,7 +57,7 @@ async fn main() {
             );
         }
         Err(e) => {
-            eprintln!("Error executing parallel flow: {}", e);
+            eprintln!("Error executing parallel flow: {e}");
         }
     }
 }

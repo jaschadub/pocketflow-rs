@@ -48,7 +48,7 @@ async fn main() {
     // The input is a dynamic JSON value, but the tool receives a typed struct
     let initial_input = json!({ "a": 10, "b": 5 });
     println!("Starting tool node flow...");
-    println!("Initial Input: {}", initial_input);
+    println!("Initial Input: {initial_input}");
 
     match flow.execute(initial_input).await {
         Ok(output) => {
@@ -59,7 +59,7 @@ async fn main() {
             );
         }
         Err(e) => {
-            eprintln!("Error executing tool flow: {}", e);
+            eprintln!("Error executing tool flow: {e}");
         }
     }
 }

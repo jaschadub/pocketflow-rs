@@ -38,7 +38,7 @@ async fn main() {
     // The input is an array of strings
     let initial_input = json!(["item1", "item2", "item3"]);
     println!("Starting batch processing flow...");
-    println!("Initial Input: {}", initial_input);
+    println!("Initial Input: {initial_input}");
 
     match flow.execute(initial_input).await {
         Ok(output) => {
@@ -49,7 +49,7 @@ async fn main() {
             );
         }
         Err(e) => {
-            eprintln!("Error executing batch flow: {}", e);
+            eprintln!("Error executing batch flow: {e}");
         }
     }
 }
