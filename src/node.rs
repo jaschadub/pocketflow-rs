@@ -3,9 +3,9 @@
 //! This module defines the fundamental [`Node`] trait that all computation
 //! units in RustyFlow must implement.
 
+use crate::error::FlowError;
 use async_trait::async_trait;
 use serde_json::Value;
-use crate::error::FlowError;
 
 /// The fundamental building block for all computations in RustyFlow.
 ///

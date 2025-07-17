@@ -3,11 +3,11 @@
 //! This module provides the [`Batch`] wrapper that applies a node to each
 //! element of a JSON array concurrently.
 
+use crate::error::FlowError;
+use crate::node::Node;
 use async_trait::async_trait;
 use futures::future::join_all;
 use serde_json::Value;
-use crate::error::FlowError;
-use crate::node::Node;
 
 /// A wrapper node that applies another node to each element of a JSON array concurrently.
 ///
@@ -92,7 +92,11 @@ where
         // Ensure input is an array
         let array = match input.as_array() {
             Some(arr) => arr,
-            None => return Err(FlowError::NodeFailed("Input must be a JSON array".to_string())),
+            None => {
+                return Err(FlowError::NodeFailed(
+                    "Input must be a JSON array".to_string(),
+                ))
+            }
         };
 
         // Create futures for processing each element

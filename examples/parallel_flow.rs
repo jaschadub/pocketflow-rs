@@ -1,7 +1,7 @@
 use async_trait::async_trait;
+use rustyflow::error::FlowError;
 use rustyflow::flow::ParallelFlow;
 use rustyflow::node::Node;
-use rustyflow::error::FlowError;
 use serde_json::{json, Value};
 use std::time::Duration;
 use tokio::time::sleep;
@@ -29,9 +29,18 @@ impl Node for WaitAndReturnNode {
 #[tokio::main]
 async fn main() {
     let nodes: Vec<Box<dyn Node>> = vec![
-        Box::new(WaitAndReturnNode { id: 1, wait_ms: 1000 }),
-        Box::new(WaitAndReturnNode { id: 2, wait_ms: 500 }),
-        Box::new(WaitAndReturnNode { id: 3, wait_ms: 750 }),
+        Box::new(WaitAndReturnNode {
+            id: 1,
+            wait_ms: 1000,
+        }),
+        Box::new(WaitAndReturnNode {
+            id: 2,
+            wait_ms: 500,
+        }),
+        Box::new(WaitAndReturnNode {
+            id: 3,
+            wait_ms: 750,
+        }),
     ];
 
     let parallel_flow = ParallelFlow::new(nodes);
@@ -42,7 +51,10 @@ async fn main() {
     match parallel_flow.execute(initial_input).await {
         Ok(output) => {
             println!("\nParallel flow executed successfully!");
-            println!("Output:\n{}", serde_json::to_string_pretty(&output).unwrap());
+            println!(
+                "Output:\n{}",
+                serde_json::to_string_pretty(&output).unwrap()
+            );
         }
         Err(e) => {
             eprintln!("Error executing parallel flow: {}", e);

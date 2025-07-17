@@ -65,10 +65,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Install Rust 1.70
+      - name: Install Rust 1.75
         uses: dtolnay/rust-toolchain@master
         with:
-          toolchain: 1.70.0
+          toolchain: 1.75.0
       
       - name: Cache Cargo dependencies
         uses: actions/cache@v4
@@ -79,7 +79,7 @@ jobs:
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
             target/
-          key: ${{ runner.os }}-1.70.0-cargo-${{ hashFiles('**/Cargo.lock') }}
+          key: ${{ runner.os }}-1.75.0-cargo-${{ hashFiles('**/Cargo.lock') }}
       
       - name: Check MSRV
         run: cargo check --all-features

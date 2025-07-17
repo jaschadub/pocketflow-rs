@@ -2,7 +2,7 @@
 name = "rustyflow"
 version = "0.1.0"
 edition = "2021"
-rust-version = "1.70"
+rust-version = "1.75"
 authors = ["Jascha Wanger <jascha@thirdkey.ai>"]
 license = "MIT"
 description = "A lightweight, high-performance agent framework for Rust, providing elegant abstractions for building complex AI workflows with type safety and async concurrency."

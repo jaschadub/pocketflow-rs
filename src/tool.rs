@@ -3,11 +3,11 @@
 //! This module provides the [`Tool`] trait for type-safe operations and
 //! [`ToolNode`] for integrating tools into flows.
 
+use crate::error::FlowError;
+use crate::node::Node;
 use async_trait::async_trait;
 use serde::Serialize;
 use serde_json::Value;
-use crate::error::FlowError;
-use crate::node::Node;
 
 /// A trait for type-safe tools that work with structured inputs and outputs.
 ///
@@ -58,7 +58,7 @@ use crate::node::Node;
 pub trait Tool: Send + Sync {
     /// The input type for this tool, must be deserializable from JSON.
     type Input: serde::de::DeserializeOwned + Send + Sync;
-    
+
     /// The output type for this tool, must be serializable to JSON.
     type Output: Serialize + Send + Sync;
 
@@ -141,13 +141,13 @@ impl<T: Tool> Node for ToolNode<T> {
     async fn call(&self, input: Value) -> Result<Value, FlowError> {
         // Deserialize the JSON value into the tool's input type
         let typed_input: T::Input = serde_json::from_value(input)?;
-        
+
         // Execute the tool with the typed input
         let typed_output = self.tool.run(typed_input).await?;
-        
+
         // Serialize the typed output back to a JSON value
         let output_value = serde_json::to_value(typed_output)?;
-        
+
         Ok(output_value)
     }
 }

@@ -48,15 +48,15 @@
 //! - **Flexible Execution**: Sequential, parallel, and batch patterns
 //! - **Memory Safe**: Leverages Rust's ownership system
 
-pub mod error;
-pub mod node;
-pub mod flow;
 pub mod batch;
+pub mod error;
+pub mod flow;
+pub mod node;
 pub mod tool;
 
 // Re-export commonly used types for convenience
-pub use error::FlowError;
-pub use node::Node;
-pub use flow::{Flow, ParallelFlow};
 pub use batch::Batch;
+pub use error::FlowError;
+pub use flow::{Flow, ParallelFlow};
+pub use node::Node;
 pub use tool::{Tool, ToolNode};

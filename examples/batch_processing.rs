@@ -1,8 +1,8 @@
 use async_trait::async_trait;
 use rustyflow::batch::Batch;
+use rustyflow::error::FlowError;
 use rustyflow::flow::Flow;
 use rustyflow::node::Node;
-use rustyflow::error::FlowError;
 use serde_json::{json, Value};
 
 // A simple node that appends a suffix to a string
@@ -43,7 +43,10 @@ async fn main() {
     match flow.execute(initial_input).await {
         Ok(output) => {
             println!("\nBatch flow executed successfully!");
-            println!("Output:\n{}", serde_json::to_string_pretty(&output).unwrap());
+            println!(
+                "Output:\n{}",
+                serde_json::to_string_pretty(&output).unwrap()
+            );
         }
         Err(e) => {
             eprintln!("Error executing batch flow: {}", e);

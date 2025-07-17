@@ -3,10 +3,10 @@
 //! This module provides the core flow types for organizing nodes into
 //! execution pipelines.
 
-use crate::node::Node;
 use crate::error::FlowError;
-use serde_json::Value;
+use crate::node::Node;
 use futures::future::join_all;
+use serde_json::Value;
 
 /// A sequential execution pipeline for nodes.
 ///
@@ -139,7 +139,8 @@ impl ParallelFlow {
     /// error encountered.
     pub async fn execute(&self, input: Value) -> Result<Value, FlowError> {
         // Create futures for all nodes, each receiving a clone of the input
-        let futures: Vec<_> = self.nodes
+        let futures: Vec<_> = self
+            .nodes
             .iter()
             .map(|node| node.call(input.clone()))
             .collect();

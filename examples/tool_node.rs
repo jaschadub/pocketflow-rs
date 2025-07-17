@@ -1,8 +1,8 @@
 use async_trait::async_trait;
+use rustyflow::error::FlowError;
 use rustyflow::flow::Flow;
 use rustyflow::node::Node;
 use rustyflow::tool::{Tool, ToolNode};
-use rustyflow::error::FlowError;
 use serde::{Deserialize, Serialize};
 use serde_json::json;
 
@@ -53,7 +53,10 @@ async fn main() {
     match flow.execute(initial_input).await {
         Ok(output) => {
             println!("\nTool flow executed successfully!");
-            println!("Output:\n{}", serde_json::to_string_pretty(&output).unwrap());
+            println!(
+                "Output:\n{}",
+                serde_json::to_string_pretty(&output).unwrap()
+            );
         }
         Err(e) => {
             eprintln!("Error executing tool flow: {}", e);
