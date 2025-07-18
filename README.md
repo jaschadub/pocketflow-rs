@@ -53,7 +53,7 @@ Create your first flow:
 
 ```rust
 use async_trait::async_trait;
-use pocketflow_rs::{flow::Flow, node::Node, error::FlowError};
+use rustyflow::{flow::Flow, node::Node, error::FlowError};
 use serde_json::{json, Value};
 
 struct GreetingNode;
@@ -196,7 +196,7 @@ let flow = Flow::new(vec![Box::new(batch_node)]);
 ### Sequential Processing
 
 ```rust
-use pocketflow_rs::flow::Flow;
+use rustyflow::flow::Flow;
 
 #[tokio::main]
 async fn main() {
@@ -213,7 +213,7 @@ async fn main() {
 ### Parallel Processing
 
 ```rust
-use pocketflow_rs::flow::ParallelFlow;
+use rustyflow::flow::ParallelFlow;
 
 #[tokio::main]
 async fn main() {
@@ -231,7 +231,7 @@ async fn main() {
 ### Batch Processing
 
 ```rust
-use pocketflow_rs::batch::Batch;
+use rustyflow::batch::Batch;
 
 #[tokio::main]
 async fn main() {
@@ -247,7 +247,7 @@ async fn main() {
 ### Type-Safe Tool Integration
 
 ```rust
-use pocketflow_rs::tool::ToolNode;
+use rustyflow::tool::ToolNode;
 
 #[tokio::main]
 async fn main() {
@@ -272,7 +272,7 @@ RustyFlow includes a built-in HTTP server for exposing flows as REST APIs:
 
 ```rust
 use axum::{Router, routing::post};
-use pocketflow_rs::flow::Flow;
+use rustyflow::flow::Flow;
 
 #[tokio::main]
 async fn main() {
@@ -405,7 +405,6 @@ pub enum FlowError {
 
 - [API Documentation](https://docs.rs/rustyflow)
 - [Examples](./examples/)
-- [Migration Guide](./docs/migration.md) (from Python PocketFlow)
 
 ## 🛣️ Roadmap
 
